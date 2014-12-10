@@ -1,0 +1,80 @@
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;font-size:100%;vertical-align:baseline}
+html{line-height:1}
+ol,ul{list-style:none}
+table{border-collapse:collapse;border-spacing:0}
+caption,td,th{text-align:left;font-weight:400;vertical-align:middle}
+blockquote,q{quotes:none}
+blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}
+a img{border:none}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{display:block}
+body{margin:0}
+img{vertical-align:middle}
+.sep{clear:both}
+body{font-family:Microsoft JhengHei,Times New Roman}
+#row_1,#row_2,#row_3{top:false;position:relative;width:100%;margin-bottom:20px}
+.detail,.item-title,.pattern{word-break:break-all}
+.special-area,.special-describe,.special-pattern,.special-region,.special-store_price{margin:5px 0}
+#row_1{background:url(http://lh6.ggpht.com/Kuj8CrlP5-Xol-MOmRDFZYoekn18XEYQ8VhIWyprcqnOSNu76Po7zOu0hho2nadxSLi9koJoCVyBPOuskafI-Q=w960) no-repeat #ebebeb;height:251px}
+#row_1 .item{background-color:#d2e6df}
+#row_2{background:url(http://lh5.ggpht.com/PDGz61cpTxgdCbRGtmyJv1g9dwXLli_4niG86yUqXLtcQY6jwaiPvz05r1ItThXxrdUhWZ6fA-pA35RetTyt=w960) no-repeat #ebebeb;height:249px}
+#row_2 .item{background-color:#fee3c0}
+#row_3{background:url(http://lh3.ggpht.com/vzVXSBPoNdUv82tXLG-xQXfmRetfLkPCoMmfmEBKiQFuDXicgX2q0Ab-G3X2JkSjj-QLPPE9PnYd73VC-FyRcT4=w960) no-repeat #ebebeb;height:580px}
+#row_3 .item_list_wraper{top:43px;right:false;bottom:false;left:12px;position:absolute;width:936px;height:530px}
+#row_3 .item_list{width:936px;height:530px}
+#row_3 .item{width:130px;height:240px;border:1px dashed #ccc;background-color:#fcf8d4;margin:12px}
+#row_3 .item-title{text-align:center;width:106px}
+#row_3 .item-img{width:100px;height:80px;border:1px solid #e8e7d8;margin:13px auto}
+#row_3 .item-img img{width:100px;height:80px}
+#row_3 .area{text-align:center}
+#row_3 .area span::before{content:"坪數"}
+#row_3 .item-store_price{width:130px;height:20px;margin:0;text-align:center}
+#row_3 .item-store_price span::before{content:'總價'}
+#row_3 .item-offer_price_plus{text-align:center;margin:10px 0}
+#row_3 .item-offer_price{width:130px;height:14px;text-align:center}
+#row_3 .item-offer_price span{font-size:18px}
+#row_3 .offer_price{font-size:20px}
+#row_3 .offer_price::after{content:'↓';color:#FC6C28;font-weight:bolder;font-size:17px;margin:1px 0 0 5px;position:absolute}
+#row_3 .item-slogan{color:#634c35;display:block;text-align:center;margin-top:15px}
+#row_3 .region{width:106px;display:block;color:#55504b;margin:10px auto;font-size:14px;text-align:center}
+#row_3 .off{display:block;text-align:center;margin-top:30px;color:#f95c16}
+.wraper{top:false;position:relative;width:960px;margin:0 auto}
+.top-box{top:false;position:relative;width:100%;height:444px}
+.top-box-left{top:16px;position:absolute;width:106px;height:54px;cursor:pointer}
+.logo{width:106px;height:54px;cursor:pointer;background-repeat:no-repeat}
+.special{top:90px;position:absolute;width:653px;height:325px;box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;background-color:#fff}
+.special-img{top:40px;right:false;bottom:false;left:40px;position:absolute;cursor:pointer}
+.special-img img{width:250px;height:250px}
+.special-text{top:40px;right:false;bottom:false;left:340px;position:absolute;width:260px;overflow:hidden}
+.special-pattern{top:false;position:relative;width:260px;height:19px;color:#55504b;overflow:hidden}
+.special-describe{top:false;position:relative;width:260px;height:23px;font-size:23px;color:#6c9996;overflow:hidden;margin-bottom:20px;font-weight:bolder}
+.special-area{top:false;position:relative;width:260px;height:19px;color:#55504b}
+.special-region{top:false;position:relative;width:260px;height:19px;font-size:20px;margin-bottom:20px;color:#6c9996;font-weight:bolder}
+.special-store_price{top:false;position:relative;width:260px;height:19px;color:#55504b}
+.special-store_price span{color:#ff5a00}
+.special-more{top:280px;right:false;bottom:false;left:555px;position:absolute;width:68px;height:20px;background:url(http://lh6.ggpht.com/1IgZaUFiZoyHx4VkCnpZFLq3zV5Nous7M8NWfNtdFZHOTRHwC7ibLChkqyaguBrAdRugAnGwfo8bUOk3rHzJ) no-repeat;cursor:pointer}
+#label{color:#000}
+.banner{top:90px;right:0;position:absolute;width:285px;height:325px;cursor:pointer;background-repeat:no-repeat}
+.prev{top:95px;right:false;bottom:false;left:0;position:absolute;width:67px;height:95px;float:left;cursor:pointer}
+.next{top:95px;right:0;position:absolute;width:67px;height:95px;float:right;cursor:pointer}
+.more{top:9px;right:false;bottom:false;left:864px;position:absolute;width:68px;height:20px;cursor:pointer}
+.item_list_wraper{top:50px;right:false;bottom:false;left:52px;position:absolute;width:860px;height:187px;overflow:hidden}
+.item_list{width:8000px}
+.item_list .item-img{width:100%;height:100px;cursor:pointer;background-color:#fff}
+.item_list .item-img img{width:150px;height:98px}
+.item{top:false;position:relative;width:150px;height:170px;overflow:hidden;float:left;margin:10px;background-color:#fff}
+.item-title{width:120px;height:16px;text-align:left;display:block;font-weight:bolder;margin:5px auto;overflow:hidden;border:0;z-index:998;background-color:transparent;font-size:14px;line-height:16px;color:#000;text-decoration:none}
+.area{width:120px;height:13px;display:block;font-weight:bolder;color:#55504b;font-size:14px;margin:5px auto}
+.item-store_price{color:#55504b;text-align:left;margin:0 0 0 14px;float:left}
+.store_price{display:inline-block;font-size:14px}
+.item-offer_price{color:red;text-align:right;margin-right:16px}
+.item-offer_price_plus{color:red;text-align:left;margin-left:15px}
+.offer_price{display:inline-block;font-size:14px}
+.deleteline{text-decoration:line-through;margin-right:10px}
+.sp{color:#eec018}
+.item-slogan{display:none}
+.detail{width:80px;float:left;font-size:12px;overflow:hidden;margin:5px;border:0;color:#55504b}
+.region{display:none}
+.pattern{width:130px;height:12px;font-size:12px;overflow:hidden;margin:5px;border:0;color:#55504b}
+.off{display:none}
+.footer{top:false;position:relative;width:100%;height:72px;background:url(http://lh5.ggpht.com/oE8nHYVwV2BKYiby49NkyajDO_2Zz99JwpqkXFjFqWRKAwYj8G8f8BvQJ_fyzHI6_lFzz4x8_xdxXi_8X3godhM=w960) no-repeat #ebebeb;margin-bottom:20px}
+.background{background:url(http://lh5.ggpht.com/C84PNbVRw4EoprIULVe43Zxch1P1bgCiTkbvrzTXvrd0xoQTNZtC_ntcAiPy5McxVAwog-dwrIyGYkxy0sPZCis) #ebebeb;height:100%}

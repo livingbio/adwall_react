@@ -1,0 +1,598 @@
+/* line 17, ../../../../../../Downloads/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Downloads/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Downloads/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Downloads/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Downloads/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Downloads/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Downloads/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Downloads/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Downloads/Fire.app/Contents/Resources/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 28, ../_base.scss */
+body {
+  margin: 0;
+}
+
+/* line 32, ../_base.scss */
+img {
+  vertical-align: middle;
+}
+
+/* line 36, ../_base.scss */
+.sep {
+  clear: both;
+}
+
+/* line 40, cthouse.scss */
+body {
+  font-family: Microsoft JhengHei , Times New Roman;
+}
+
+/* line 44, cthouse.scss */
+#row_1, #row_2, #row_3 {
+  top: false;
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* line 50, cthouse.scss */
+.item-title, .detail, .pattern {
+  word-break: break-all;
+}
+
+/* line 54, cthouse.scss */
+.special-pattern, .special-describe, .special-area, .special-region, .special-store_price {
+  margin: 5px 0;
+}
+
+/* line 60, cthouse.scss */
+#row_1 {
+  background: #ebebeb url("http://lh6.ggpht.com/Kuj8CrlP5-Xol-MOmRDFZYoekn18XEYQ8VhIWyprcqnOSNu76Po7zOu0hho2nadxSLi9koJoCVyBPOuskafI-Q=w960") no-repeat;
+  height: 251px;
+}
+/* line 64, cthouse.scss */
+#row_1 .item {
+  background-color: #d2e6df;
+}
+
+/* line 69, cthouse.scss */
+#row_2 {
+  background: #ebebeb url("http://lh5.ggpht.com/PDGz61cpTxgdCbRGtmyJv1g9dwXLli_4niG86yUqXLtcQY6jwaiPvz05r1ItThXxrdUhWZ6fA-pA35RetTyt=w960") no-repeat;
+  height: 249px;
+}
+/* line 73, cthouse.scss */
+#row_2 .item {
+  background-color: #fee3c0;
+}
+
+/* line 78, cthouse.scss */
+#row_3 {
+  background: #ebebeb url("http://lh3.ggpht.com/vzVXSBPoNdUv82tXLG-xQXfmRetfLkPCoMmfmEBKiQFuDXicgX2q0Ab-G3X2JkSjj-QLPPE9PnYd73VC-FyRcT4=w960") no-repeat;
+  height: 580px;
+}
+/* line 82, cthouse.scss */
+#row_3 .item_list_wraper {
+  top: 43px;
+  right: false;
+  bottom: false;
+  left: 12px;
+  position: absolute;
+  width: 936px;
+  height: 530px;
+}
+/* line 86, cthouse.scss */
+#row_3 .item_list {
+  width: 936px;
+  height: 530px;
+}
+/* line 90, cthouse.scss */
+#row_3 .item {
+  width: 130px;
+  height: 240px;
+  border: 1px dashed #cccccc;
+  background-color: #fcf8d4;
+  margin: 12px;
+}
+/* line 96, cthouse.scss */
+#row_3 .item-title {
+  text-align: center;
+  width: 106px;
+}
+/* line 100, cthouse.scss */
+#row_3 .item-img {
+  width: 100px;
+  height: 80px;
+  border: 1px solid #e8e7d8;
+  margin: 13px auto;
+}
+/* line 104, cthouse.scss */
+#row_3 .item-img img {
+  width: 100px;
+  height: 80px;
+}
+/* line 108, cthouse.scss */
+#row_3 .area {
+  text-align: center;
+}
+/* line 110, cthouse.scss */
+#row_3 .area span::before {
+  content: "坪數";
+}
+/* line 114, cthouse.scss */
+#row_3 .item-store_price {
+  width: 130px;
+  height: 20px;
+  margin: 0 0 0 0px;
+  text-align: center;
+}
+/* line 118, cthouse.scss */
+#row_3 .item-store_price span::before {
+  content: '總價';
+}
+/* line 123, cthouse.scss */
+#row_3 .item-offer_price_plus {
+  text-align: center;
+  margin: 10px 0;
+}
+/* line 127, cthouse.scss */
+#row_3 .item-offer_price {
+  width: 130px;
+  height: 14px;
+  text-align: center;
+}
+/* line 130, cthouse.scss */
+#row_3 .item-offer_price span {
+  font-size: 18px;
+}
+/* line 134, cthouse.scss */
+#row_3 .offer_price {
+  font-size: 20px;
+}
+/* line 135, cthouse.scss */
+#row_3 .offer_price::after {
+  content: '↓';
+  color: #FC6C28;
+  font-weight: bolder;
+  font-size: 17px;
+  margin: 1px 0 0 5px;
+  position: absolute;
+}
+/* line 145, cthouse.scss */
+#row_3 .item-slogan {
+  color: #634c35;
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+}
+/* line 151, cthouse.scss */
+#row_3 .region {
+  width: 106px;
+  display: block;
+  color: #55504b;
+  margin: 10px auto;
+  font-size: 14px;
+  text-align: center;
+}
+/* line 159, cthouse.scss */
+#row_3 .off {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  color: #f95c16;
+}
+
+/* line 169, cthouse.scss */
+.wraper {
+  top: false;
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+}
+
+/* line 174, cthouse.scss */
+.top-box {
+  top: false;
+  position: relative;
+  width: 100%;
+  height: 444px;
+}
+
+/* line 178, cthouse.scss */
+.top-box-left {
+  top: 16px;
+  position: absolute;
+  width: 106px;
+  height: 54px;
+  cursor: pointer;
+}
+
+/* line 183, cthouse.scss */
+.logo {
+  width: 106px;
+  height: 54px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+}
+
+/* line 189, cthouse.scss */
+.special {
+  top: 90px;
+  position: absolute;
+  width: 653px;
+  height: 325px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+/* line 195, cthouse.scss */
+.special-img {
+  top: 40px;
+  right: false;
+  bottom: false;
+  left: 40px;
+  position: absolute;
+  cursor: pointer;
+}
+/* line 198, cthouse.scss */
+.special-img img {
+  width: 250px;
+  height: 250px;
+}
+
+/* line 202, cthouse.scss */
+.special-text {
+  top: 40px;
+  right: false;
+  bottom: false;
+  left: 340px;
+  position: absolute;
+  width: 260px;
+  overflow: hidden;
+}
+
+/* line 207, cthouse.scss */
+.special-pattern {
+  top: false;
+  position: relative;
+  width: 260px;
+  height: 19px;
+  color: #55504b;
+  overflow: hidden;
+}
+
+/* line 215, cthouse.scss */
+.special-describe {
+  top: false;
+  position: relative;
+  width: 260px;
+  height: 23px;
+  font-size: 23px;
+  color: #6c9996;
+  overflow: hidden;
+  margin-bottom: 20px;
+  font-weight: bolder;
+}
+
+/* line 226, cthouse.scss */
+.special-area {
+  top: false;
+  position: relative;
+  width: 260px;
+  height: 19px;
+  color: #55504b;
+}
+
+/* line 233, cthouse.scss */
+.special-region {
+  top: false;
+  position: relative;
+  width: 260px;
+  height: 19px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #6c9996;
+  font-weight: bolder;
+}
+
+/* line 243, cthouse.scss */
+.special-store_price {
+  top: false;
+  position: relative;
+  width: 260px;
+  height: 19px;
+  color: #55504b;
+}
+/* line 248, cthouse.scss */
+.special-store_price span {
+  color: #ff5a00;
+}
+
+/* line 253, cthouse.scss */
+.special-more {
+  top: 280px;
+  right: false;
+  bottom: false;
+  left: 555px;
+  position: absolute;
+  width: 68px;
+  height: 20px;
+  background: url("http://lh6.ggpht.com/1IgZaUFiZoyHx4VkCnpZFLq3zV5Nous7M8NWfNtdFZHOTRHwC7ibLChkqyaguBrAdRugAnGwfo8bUOk3rHzJ") no-repeat;
+  cursor: pointer;
+}
+
+/* line 259, cthouse.scss */
+#label {
+  color: #000000;
+}
+
+/* line 263, cthouse.scss */
+.banner {
+  top: 90px;
+  right: 0px;
+  position: absolute;
+  width: 285px;
+  height: 325px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+}
+
+/* line 270, cthouse.scss */
+.prev {
+  top: 95px;
+  right: false;
+  bottom: false;
+  left: 0px;
+  position: absolute;
+  width: 67px;
+  height: 95px;
+  float: left;
+  cursor: pointer;
+}
+
+/* line 278, cthouse.scss */
+.next {
+  top: 95px;
+  right: 0px;
+  position: absolute;
+  width: 67px;
+  height: 95px;
+  float: right;
+  cursor: pointer;
+}
+
+/* line 285, cthouse.scss */
+.more {
+  top: 9px;
+  right: false;
+  bottom: false;
+  left: 864px;
+  position: absolute;
+  width: 68px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* line 291, cthouse.scss */
+.item_list_wraper {
+  top: 50px;
+  right: false;
+  bottom: false;
+  left: 52px;
+  position: absolute;
+  width: 860px;
+  height: 187px;
+  overflow: hidden;
+}
+
+/* line 296, cthouse.scss */
+.item_list {
+  width: 8000px;
+}
+/* line 298, cthouse.scss */
+.item_list .item-img {
+  width: 100%;
+  height: 100px;
+  cursor: pointer;
+  background-color: #fff;
+}
+/* line 302, cthouse.scss */
+.item_list .item-img img {
+  width: 150px;
+  height: 98px;
+}
+
+/* line 307, cthouse.scss */
+.item {
+  top: false;
+  position: relative;
+  width: 150px;
+  height: 170px;
+  overflow: hidden;
+  float: left;
+  margin: 10px;
+  background-color: #ffffff;
+}
+
+/* line 315, cthouse.scss */
+.item-title {
+  width: 120px;
+  height: 16px;
+  text-align: left;
+  display: block;
+  font-weight: bolder;
+  margin: 5px auto;
+  overflow: hidden;
+  border: 0px;
+  z-index: 998;
+  background-color: transparent;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+  text-decoration: none;
+}
+
+/* line 332, cthouse.scss */
+.area {
+  width: 120px;
+  height: 13px;
+  display: block;
+  font-weight: bolder;
+  color: #55504b;
+  font-size: 14px;
+  margin: 5px auto;
+}
+
+/* line 341, cthouse.scss */
+.item-store_price {
+  color: #55504b;
+  text-align: left;
+  margin: 0 0 0 14px;
+  float: left;
+}
+
+/* line 347, cthouse.scss */
+.store_price {
+  display: inline-block;
+  font-size: 14px;
+}
+
+/* line 352, cthouse.scss */
+.item-offer_price {
+  color: #ff0000;
+  text-align: right;
+  margin-right: 16px;
+}
+
+/* line 357, cthouse.scss */
+.item-offer_price_plus {
+  color: #ff0000;
+  text-align: left;
+  margin-left: 15px;
+}
+
+/* line 362, cthouse.scss */
+.offer_price {
+  display: inline-block;
+  font-size: 14px;
+}
+
+/* line 366, cthouse.scss */
+.deleteline {
+  text-decoration: line-through;
+  margin-right: 10px;
+}
+
+/* line 370, cthouse.scss */
+.sp {
+  color: #eec018;
+}
+
+/* line 373, cthouse.scss */
+.item-slogan {
+  display: none;
+}
+
+/* line 377, cthouse.scss */
+.detail {
+  width: 80px;
+  float: left;
+  font-size: 12px;
+  overflow: hidden;
+  margin: 5px;
+  border: 0px;
+  color: #55504b;
+}
+
+/* line 387, cthouse.scss */
+.region {
+  display: none;
+}
+
+/* line 390, cthouse.scss */
+.pattern {
+  width: 130px;
+  height: 12px;
+  font-size: 12px;
+  overflow: hidden;
+  margin: 5px;
+  border: 0px;
+  color: #55504b;
+}
+
+/* line 399, cthouse.scss */
+.off {
+  display: none;
+}
+
+/* line 403, cthouse.scss */
+.footer {
+  top: false;
+  position: relative;
+  width: 100%;
+  height: 72px;
+  background: #ebebeb url("http://lh5.ggpht.com/oE8nHYVwV2BKYiby49NkyajDO_2Zz99JwpqkXFjFqWRKAwYj8G8f8BvQJ_fyzHI6_lFzz4x8_xdxXi_8X3godhM=w960") no-repeat;
+  margin-bottom: 20px;
+}
+
+.background {
+  background: url("http://lh5.ggpht.com/C84PNbVRw4EoprIULVe43Zxch1P1bgCiTkbvrzTXvrd0xoQTNZtC_ntcAiPy5McxVAwog-dwrIyGYkxy0sPZCis") rgb(235, 235, 235);
+  height: 100%;
+}
