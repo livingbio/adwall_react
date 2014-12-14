@@ -4,9 +4,7 @@
 
 `npm install` 安裝所有套件
 
-`node server` 啟動 local web server
-
-`npm start` 開始 bundle + watch
+`node server & npm start` 啟動 local web server & 開始 bundle + watch
 
 `http://localhost:8000/` 即可看到畫面
 

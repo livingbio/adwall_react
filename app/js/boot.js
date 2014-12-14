@@ -41,6 +41,6 @@ $(function(){
 			//停止setInterval中的function
 			clearInterval(t);
 		}
-	}, 1000);
+	}, 500);
 
 })

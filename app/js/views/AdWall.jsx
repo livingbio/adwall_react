@@ -13,7 +13,7 @@ var TopBox = React.createFactory( require('./TopBox.jsx') );
 var BottomBox = React.createFactory( require('./BottomBox.jsx') );
 var Footer = React.createFactory( require('./Footer.jsx') );
 
-var TodoStore = require('../stores/TodoStore');
+var Store = require('../stores/Store');
 var AppConstants = require('../constants/AppConstants');
 
 var idResize;
@@ -41,7 +41,7 @@ var AdWall = React.createClass({
      * 主程式進入點
      */
     componentWillMount: function() {
-        TodoStore.addListener( AppConstants.CHANGE_EVENT, this._onChange );
+        Store.addListener( AppConstants.CHANGE_EVENT, this._onChange );
 
         // 要用 interval 擋一下
         window.addEventListener('resize', this.handleResize );
@@ -94,7 +94,7 @@ var AdWall = React.createClass({
      * 元件將從畫面上移除時，要做善後工作
      */
     componentWillUnmount: function() {
-        TodoStore.removeChangeListener( this._onChange );
+        Store.removeChangeListener( this._onChange );
     },
 
     /**
@@ -209,8 +209,8 @@ var AdWall = React.createClass({
      * 目地：向各個 store 取回資料，然後統一 setState() 再一層層往下傳遞
      */
     getTruth: function() {
-        // 是從 TodoStore 取資料(as the single source of truth)
-        return TodoStore.getAll();
+        // 是從 Store 取資料(as the single source of truth)
+        return Store.getAll();
     }
 
 
