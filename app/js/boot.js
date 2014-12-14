@@ -15,8 +15,13 @@
 // 因為 require('...') 只是拿到一份元件定義檔，無法直接使用
 // 要用它建立一個 factory，之後才能產出 instance，下面 createFactory() 就是在建立工廠
 var AdWall = React.createFactory(require("./views/AdWall.jsx"));
+//引入資料
+var adLoader = require('./stores/adloader.js');
 
 $(function(){
+	//執行function，發送api抓資料處理後存到TagtooAdWall.adDate.itemList中
+	adLoader.loadJQ()
+
 	// create container dom element
 	var body = document.getElementsByTagName("body")[0],
 		node = document.createElement("section"),
@@ -25,7 +30,17 @@ $(function(){
 	node.setAttributeNode(id);
 	body.insertBefore(node, body.childNodes[0]);
 
-	// 幫我建立mainapp元件，放到container中
-	React.render( AdWall(), document.getElementById("container") );
+	var t = setInterval(function () {
+		//確認api抓的資料有存到TagtooAdWall.adData.itemList之中
+		var complete = TagtooAdWall.adData.itemList.row_1 && TagtooAdWall.adData.itemList.row_2 && TagtooAdWall.adData.itemList.row_3;
+		if(complete){
+
+			// 幫我建立mainapp元件，放到container中
+			React.render( AdWall(), document.getElementById("container") );
+
+			//停止setInterval中的function
+			clearInterval(t);
+		}
+	}, 1000);
 
 })

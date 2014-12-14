@@ -12,8 +12,9 @@ var actions = require('../actions/AppActionCreator');
 
 var EventEmitter = require('events').EventEmitter; // 取得一個 pub/sub 廣播器
 
-//引入假資料
-var response = require('../stores/test_data.js');
+
+//假資料
+// var response = require('../stores/test_data.js');
 //========================================================================
 //
 // Private vars
@@ -44,10 +45,6 @@ var o = JSON.parse(db.getItem('mydb'));
 arrTodos = o.todos ? o.todos : [] ;
 selectedItem = o.selectedItem;
 
-var url = "//ad.tagtoo.co/query_iframe?q=row_1"
-$.get(url,function(res){
-    console.log(res)
-})
 
 //========================================================================
 //
@@ -63,13 +60,23 @@ $.extend( Store, {
      * 供外界取得 store 內部資料
      */
     getAll: function(){
+
         return {
-            arrTodos: arrTodos,
-            selectedItem: selectedItem,
-            filter: searchFilter,
-            //======假資料
-            response: response
+                arrTodos: arrTodos,
+                selectedItem: selectedItem,
+                filter: searchFilter,
+                response: TagtooAdWall.adData
         }
+        // while(!TagtooAdWall.adData.)
+
+
+
+        // return {
+        //     arrTodos: arrTodos,
+        //     selectedItem: selectedItem,
+        //     filter: searchFilter,
+        //     response: TagtooAdWall.adData
+        // }
     },
 
     //

@@ -18,7 +18,9 @@ var Item = React.createClass({
     
   	return (
                     
-        <div className="item">
+        <div className="item"
+             onClick={this.openLink}>
+
           <div className="item-slogan"></div>
           <div className="item-img">
             <img src={detail.image_url} />
@@ -33,6 +35,15 @@ var Item = React.createClass({
         </div>
 
     );
+  },
+  openLink: function(){
+    var link = this.props.detail.link;
+      // if (link.match(/\?/)) {
+      //   link = link + location.search.replace(/([\?&])pid=[^&]*&?/, "$1").replace(/\?/,"&");
+      // }else{
+      //   link = link + location.search.replace(/([\?&])pid=[^&]*&?/, "$1");
+      // }
+    window.open(link, '_blank');
   }
 
 

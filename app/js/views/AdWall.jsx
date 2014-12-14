@@ -33,7 +33,8 @@ var AdWall = React.createClass({
     getInitialState: function() {
         var o = this.getTruth();  // {} -> this.state
         o.screenSize = 'tablet'
-        return o;
+        return o;  
+
     },
 
     /**
@@ -79,6 +80,10 @@ var AdWall = React.createClass({
      */
     componentDidMount: function() {
         //
+        // if (!this.props.reponse) {
+
+        // }
+
     },  
 
     //========================================================================
