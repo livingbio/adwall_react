@@ -15,11 +15,11 @@ var Item = React.createClass({
   render: function() {
 
     var detail = this.props.detail;
-    
+
   	return (
                     
         <div className="item"
-             onClick={this.openLink}>
+             onClick={this.props.click}>
 
             <div className="item-slogan"></div>
             <div className="item-img">
@@ -37,12 +37,6 @@ var Item = React.createClass({
 
     );
   },
-  openLink: function(){
-    //連結都會是link這個屬性嗎？special也有一個
-    var click_link = this.props.detail.click_link;
-    window.open(click_link, '_blank');
-  }
-
 
 });
 

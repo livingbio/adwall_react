@@ -8,24 +8,14 @@ TagtooAdWall = {
     "query": {
     	//發api
         base: function(uri, cb) {
-            var setting = {
+            $.ajax({
                 type: 'GET',
                 url: uri,
                 dataType: 'jsonp',
                 cache: true,
                 jsonpCallback: "a" + uri.replace(/[^\w]/g, '_'),
                 success: cb
-            }
-
-            $.ajax(setting);
-            // $.ajax({
-            //     type: 'GET',
-            //     url: uri,
-            //     dataType: 'jsonp',
-            //     cache: true,
-            //     //jsonpCallback: "a" + uri.replace(/[^\w]/g, '_'),
-            //     success: cb
-            // })
+            })
         },
         //api有問題
 
@@ -37,6 +27,9 @@ TagtooAdWall = {
 		//recommend: function(productKeys, cb) {
 		//    TagtooAdWall.query.base(TagtooAdWall.URLBase + "query_iframe?q=&recommend=" + productKeys, cb);
 		//},
+        key: function(productKeys, cb) {
+            TagtooAdWall.query.base(TagtooAdWall.URLBase + "product.key?uri=" + productKeys, cb);
+        },
 		similar: function(productKeys,cb) {
 			//要改掉
 			TagtooAdWall.query.base("//ad.tagtoo.co/ad/query/" + "product.simlar?product_key=" + productKeys, cb)
@@ -66,7 +59,7 @@ TagtooAdWall = {
             TagtooAdWall.query.base(TagtooAdWall.URLBase + "ad/track?p=" + p + "&ad=" + ecID, cb);
         },
         backup: function(url, cb) {
-            TagtooAdWall.query.base(TagtooAdWall.URLBase + "query_iframe?q=" + url, cb);
+            TagtooAdWall.query.base("//ad.tagtoo.co/" + "query_iframe?q=" + url, cb);
         }
     },
     init: function() {
@@ -79,8 +72,10 @@ TagtooAdWall = {
         if (typeof TagtooAdWall.urlOptions.urlbase != "undefined") {
             TagtooAdWall.URLBase = TagtooAdWall.urlOptions.urlbase;
         } else {
-            //TagtooAdWall.URLBase = "//ad.tagtoo.co/ad/query/";
-            TagtooAdWall.URLBase = "//ad.tagtoo.co/";
+            TagtooAdWall.URLBase = "//ad.tagtoo.co/ad/query/";
+            //TagtooAdWall.URLBase = "//ad.tagtoo.co/";
+            //舊版測試用
+            TagtooAdWall.URLBase = "//ad.tagtoo.co/query_iframe?q=";
         };
     },
     "util": {
@@ -248,8 +243,8 @@ TagtooAdWall = {
     setItemList: function(data) {
         //recommend抓不到喔
     	$.map(data, function(obj, key) {
-    		if (obj.type == "key") {
-    			TagtooAdWall.query[obj.name](obj.value, function(res) {
+    		if (obj.type.toLowerCase() == "key") {
+    			TagtooAdWall.query[obj.type](obj.value, function(res) {
     				//之後api統一之後要砍掉
     				if(res.length == 2) {
     					res = res[1];
@@ -291,7 +286,6 @@ TagtooAdWall = {
     	//get first product
         //product_key: TagtooAdWall.urlOptions.pid
         TagtooAdWall.query.items(TagtooAdWall.urlOptions.pid, function(res) {
-            console.log(res)
             TagtooAdWall.adData.first = TagtooAdWall.util.InfoProcess(res.results)[0];
         });
     	//get products of rows and store datas
@@ -361,26 +355,45 @@ TagtooAdWall.rowRule = {
 	    type: "backup",
 	    value: "http://www.cthouse.com.tw/&debug=true"
 	},
+    // "row_1": {
+    // 	name: "recommend",
+    //     type: "key",
+    //     value: "geosun-cthouse:product:891598",
+    //     min_num: 6
+    // },
+    // "row_2": {
+    // 	name: "similar",
+    //     type: "key",
+    //     //之後要換回{{pid}}
+    //     value: "geosun-cthouse:product:891598",
+    //     min_num: 6
+    // },
+    // "row_3": {
+    // 	name: "rootPage",
+    //     type: "key",
+    //     //之後要換回{{pid}}
+    //     value: "geosun-cthouse:product:891598",
+    //     min_num: 12
+    // }
     "row_1": {
-    	name: "recommend",
+        name: "row_1",
         type: "key",
-        value: "geosun-cthouse:product:891598",
+        value: "&recommend=geosun-cthouse:product:891598&debug=true",
         min_num: 6
     },
     "row_2": {
-    	name: "similar",
+        name: "row_2",
         type: "key",
-        //之後要換回{{pid}}
-        value: "geosun-cthouse:product:891598",
+        value: "&simlar=geosun-cthouse:product:891598&ad=" + TagtooAdWall.adData.ecId + "&simlar_type=city",
         min_num: 6
     },
     "row_3": {
-    	name: "rootPage",
+        name: "row_3",
         type: "key",
-        //之後要換回{{pid}}
-        value: "geosun-cthouse:product:891598",
+        value: "&root=geosun-cthouse:product:891598&debug=true",
         min_num: 12
     }
+
 }
 
 window.TagtooAdWall = TagtooAdWall;
