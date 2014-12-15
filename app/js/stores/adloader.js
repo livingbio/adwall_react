@@ -8,13 +8,24 @@ TagtooAdWall = {
     "query": {
     	//發api
         base: function(uri, cb) {
-            $.ajax({
+            var setting = {
                 type: 'GET',
                 url: uri,
                 dataType: 'jsonp',
                 cache: true,
+                jsonpCallback: "a" + uri.replace(/[^\w]/g, '_'),
                 success: cb
-            })
+            }
+
+            $.ajax(setting);
+            // $.ajax({
+            //     type: 'GET',
+            //     url: uri,
+            //     dataType: 'jsonp',
+            //     cache: true,
+            //     //jsonpCallback: "a" + uri.replace(/[^\w]/g, '_'),
+            //     success: cb
+            // })
         },
         //api有問題
 
@@ -50,6 +61,9 @@ TagtooAdWall = {
         //命名疑惑:root=rootpage?
         rootPage: function(productKeys, cb) {
 	        TagtooAdWall.query.base(TagtooAdWall.URLBase + "query_iframe?q=&root=" + productKeys, cb);
+        },
+        adTrack: function(p, ecID) {
+            TagtooAdWall.query.base(TagtooAdWall.URLBase + "ad/track?p=" + p + "&ad=" + ecID, cb);
         },
         backup: function(url, cb) {
             TagtooAdWall.query.base(TagtooAdWall.URLBase + "query_iframe?q=" + url, cb);
@@ -234,7 +248,7 @@ TagtooAdWall = {
     setItemList: function(data) {
         //recommend抓不到喔
     	$.map(data, function(obj, key) {
-    		if (obj.type == "row") {
+    		if (obj.type == "key") {
     			TagtooAdWall.query[obj.name](obj.value, function(res) {
     				//之後api統一之後要砍掉
     				if(res.length == 2) {
@@ -247,9 +261,31 @@ TagtooAdWall = {
                     TagtooAdWall.adData.itemList[key].ad = itemList;
     			})
     		} else if (obj.type == "remarketing") {
+                TagtooAdWall.query[obj.name](obj.type, function(res) {
+                    TagtooAdWall.a = res.a;
+                    TagtooAdWall.b = res.b;
+                    if (res.product_pool.join('|').match(/:product:|:campaign:/)) {
+                        var seenProduct = res.product_pool.join('.');//看過的商品
 
-    		} //similar???
+                        //需要再做確認
+                        TagtooAdWall.items(seenProduct, function(res) {
+                            res.results = HTMLFilter(res.results);
+                            TagtooAdWall.ad_data.itemList[obj.name] = res.results;
+                            $("#" + val.name + " .item-img,#" + val.name + " .item-describe,#" + val.name + " .item-more").on("click", function() {
+                                var itemId = $(this).closest(".item").attr("item");
+                                TagtooAdWall.onClick("remarketing",itemId);
+                                window.open(TagtooAdWall.addUtm(TagtooAdWall.ad_data.itemList.Remarketing[itemId].link), '_blank');
+                            })
+                            TagtooAdWall.remarketingListNumber();
+                        });
+                    }                })
+    		} else if (obj.type == "similar") {
+
+            }
     	})
+    },
+    track: function() {
+
     },
     loadAdData: function () {
     	//get first product
@@ -314,7 +350,7 @@ TagtooAdWall.adData.background = {
     "title": "cthouse"
 };
 
-
+//命名？？
 TagtooAdWall.adData.p = "http://www.cthouse.com.tw/&debug=true";
 
 TagtooAdWall.adData.ecId = 100;
@@ -327,20 +363,20 @@ TagtooAdWall.rowRule = {
 	},
     "row_1": {
     	name: "recommend",
-        type: "row",
-        value: "recommend",
+        type: "key",
+        value: "geosun-cthouse:product:891598",
         min_num: 6
     },
     "row_2": {
     	name: "similar",
-        type: "row",
+        type: "key",
         //之後要換回{{pid}}
         value: "geosun-cthouse:product:891598",
         min_num: 6
     },
     "row_3": {
     	name: "rootPage",
-        type: "row",
+        type: "key",
         //之後要換回{{pid}}
         value: "geosun-cthouse:product:891598",
         min_num: 12
