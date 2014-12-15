@@ -324,10 +324,12 @@ TagtooAdWall.adData.first = {
         "root": ""
     }
 };
+//重要要補height
 TagtooAdWall.adData.background = {
     "image_url": "",
     "link": "",
     "background": "#ebebeb url('//lh5.ggpht.com/C84PNbVRw4EoprIULVe43Zxch1P1bgCiTkbvrzTXvrd0xoQTNZtC_ntcAiPy5McxVAwog-dwrIyGYkxy0sPZCis')",
+    "height": "100%",
     "title": "cthouse"
 };
 

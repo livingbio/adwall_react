@@ -171,9 +171,10 @@ var AdWall = React.createClass({
             )
         
         }else{
+            
             // desktop
             return (
-                <div className="background">
+                <div style={this.state.response.background}>
                     <div className="wraper">
                         <TopBox truth={this.state} />
                         <BottomBox truth={this.state} />
