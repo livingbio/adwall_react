@@ -18,6 +18,6 @@ app = connect()
 })
 
 // 啟動 server 在 8000
-http.createServer(app).listen(8000, function() {
-    console.log('Running on http://localhost:8000');
+http.createServer(app).listen(9000, function() {
+    console.log('Running on http://localhost:9000');
 });

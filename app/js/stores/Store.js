@@ -96,6 +96,8 @@ Store.dispatchToken = AppDispatcher.register( function eventHandlers(evt){
     // evt .action 就是 view 當時廣播出來的整包物件
     // 它內含 actionType
     var action = evt.action;
+    //為了不要更動從api抓下來的資料,所以用一個local variable來儲存
+    var response = TagtooAdWall.adData;
 
     switch (action.actionType) {
         /**
