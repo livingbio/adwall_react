@@ -12,13 +12,7 @@ var ItemList = React.createClass({
 
     render: function() {
 
-        // 這裏使用 react class add-on 來切換樣式顯示
-        // 這樣做比較有條理，比直接組合多個字串來的好控制  
-        var classes = cx({
-            'list-item': true,
-        });
-
-        var Ads = this.props.truth.ad;
+        var Ads = this.props.row.ad;
         var arr = Ads.map(function(item, index){
             return <Item key={item.index} detail={item} click={this.click.bind(this, item)}/>
         }, this)
@@ -37,8 +31,8 @@ var ItemList = React.createClass({
         window.open(item.click_link, '_blank');
 
         //add tracking pixel
-        var itemList = this.props.truth;
-        var key = this.props.truth.key;
+        var itemList = this.props.row;
+        var key = this.props.row.key;
 
         //根據不同的rule給予不同的tracking資料
         if (key == "similar") {
@@ -84,6 +78,46 @@ var ItemList = React.createClass({
         var node = document.getElementsByTagName("script")[0];
         node.parentNode.insertBefore(imgElem, node);
     },
+    //obj2會蓋到obj1
+    // mergeObject: function(obj1, obj2) {
+    //   var obj3 = {};
+    //   for (var attrname in obj1) {
+    //     obj3[attrname] = obj1[attrname];
+    //   }
+    //   for (var attrname in obj2) {
+    //     obj3[attrname] = obj2[attrname];
+    //   }
+    //   return obj3;
+    // },
+    // stringToObject: function(string) {
+    //   var data = {};
+    //   var parts = string.split("&");
+    //   for (var i = 0; i < parts.length; i++) {
+    //     var vs = parts[i].split('=');
+    //     if (vs.length == 2) {
+    //       var key = decodeURIComponent(vs[0]);
+    //       var value = decodeURIComponent(vs[1]);
+    //       data[key] = value;
+    //     }
+    //   }
+    //   return data
+    // },
+    // objectToString: function(vs){
+    //   var oN = -1,
+    //       orN = 0,
+    //       string = "";
+    //   for (i in vs) {
+    //       oN ++;
+    //   }
+    //   for (i in vs) {
+    //       string = string + i + "=" + encodeURIComponent(vs[i])
+    //       if (oN != orN) {
+    //           string += "&";
+    //       }
+    //       orN ++;
+    //   }
+    //   return string;
+    // },
     encodeQueryData: function(vs) {
         var arr = [];
         for(var key in vs) {

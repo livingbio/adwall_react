@@ -12,15 +12,10 @@ var Next = React.createClass({
   /**
    *
    */
-  render: function() {
-    
-  	return (
-      <div  className="next" 
-            onClick={this.props.onClick}></div>
-    );
-  }
+	render: function() {
 
-
+		return <div  className="next" onClick={this.props.onClick}></div>;
+	}
 
 });
 

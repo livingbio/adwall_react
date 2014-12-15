@@ -129,6 +129,7 @@ TagtooAdWall = {
             }
             return data
         },
+        //切字
         getInterceptedStr: function(sSource, rows, row_characters) {
             var iLen = rows * row_characters
             if (sSource.replace(/[^\x00-\xff]/g, "xx").length <= iLen) {
@@ -194,7 +195,7 @@ TagtooAdWall = {
                     data[i].description_short = TagtooAdWall.util.getInterceptedStr(data[i].description, descriptionWords.row, descriptionWords.rown);
                     data[i].price = TagtooAdWall.util.priceTranslate(data[i].price);
                     data[i].store_price = TagtooAdWall.util.priceTranslate(data[i].store_price);
-                    data[i].click_link = TagtooAdWall.util.addUtm(data[i].link);
+                    data[i].click_link = TagtooAdWall.util.addUtm(data[i].link);//用一個新的key把utm_content,ctype...等資訊與link組合
                 }
             }
             return data
@@ -210,38 +211,7 @@ TagtooAdWall = {
                 return data
             }
         },
-        bodyOnLoad: function() {
-            $("body").css("background", TagtooAdWall.ad_data.background.background);
-        }
     },
-    // ori_loadAdData: function() {
-    //     //儲存backup的array, 用來補足數量不足的ItemList
-    //     TagtooAdWall.query.backup(TagtooAdWall.adData.p, function(res) {
-    //             TagtooAdWall.backup = TagtooAdWall.util.InfoProcess(res[1].ad);
-    //         })
-    //     //從url的pid抓第一個商品
-    //     TagtooAdWall.query.items(TagtooAdWall.urlOptions.pid, function(res) {
-    //         TagtooAdWall.adData.first = TagtooAdWall.util.InfoProcess(res.results[0]);
-    //     });
-    //     //recommand,similar,rootpage
-    //     TagtooAdWall.query.recommend(TagtooAdWall.urlOptions.pid, function(res) {
-    //     	//補足不滿6個的ItemList
-    //     	var ItemList = TagtooAdWall.util.productComplement(res[1].ad, 6);
-    //     	//對itemList中的做一些必要的資料處理
-    //     	TagtooAdWall.adData.itemList["row_1"] = TagtooAdWall.util.InfoProcess(ItemList);
-    //         })
-    //     //100換成TagtooAdWall.ad_data.ecID
-    //     TagtooAdWall.query.similar(TagtooAdWall.urlOptions.pid, 100, "&simlar_type=city", function(res) {
-    //         //console.log(ItemList)
-    //     	var ItemList = TagtooAdWall.util.productComplement(res[1].ad, 6);
-    //     	TagtooAdWall.adData.itemList["row_2"] = TagtooAdWall.util.InfoProcess(ItemList);
-    //     })
-    //     TagtooAdWall.query.rootpage(TagtooAdWall.urlOptions.pid, function(res) {
-    //         //console.log(ItemList)
-    //     	var ItemList = TagtooAdWall.util.productComplement(res[1].ad, 12);
-    //     	TagtooAdWall.adData.itemList["row_3"] = TagtooAdWall.util.InfoProcess(ItemList);
-    //     })
-    // },
     setItemList: function(data) {
         //recommend抓不到喔
     	$.map(data, function(obj, key) {
@@ -297,14 +267,12 @@ TagtooAdWall = {
             }
     	})
     },
-    track: function() {
-
-    },
     loadAdData: function () {
     	//get first product
         //product_key: TagtooAdWall.urlOptions.pid
         TagtooAdWall.query.items(TagtooAdWall.urlOptions.pid, function(res) {
             TagtooAdWall.adData.first = TagtooAdWall.util.InfoProcess(res.results)[0];
+            //row_3以後是否都統一從first item拿root這個連結當作商品的input
             // TagtooAdWall.rowRule.row_3.value = res.results.extra.root.replace(/auto\:\/\/, ""/);
         });
     	//get products of rows and store datas

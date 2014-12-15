@@ -59,15 +59,13 @@ var AdWall = React.createClass({
             var size;
             
             // @todo: 改回 1024
-            if(body.scrollWidth > 720){
+            if (body.scrollWidth > 720) {
                 size = 'desktop';
-            }else if(body.scrollWidth > 480){
+            } else if(body.scrollWidth > 480) {
                 size = 'tablet';
-            }else{
+            } else{
                 size = 'phone';
             }
-            
-            // console.log( 'resize: ', body.scrollWidth, body.scrollHeight, ' >size: ', size );
 
             this.setState({screenSize: size});
 
