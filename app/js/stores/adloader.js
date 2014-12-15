@@ -146,6 +146,21 @@ TagtooAdWall = {
 
             return str + "...(更多)";
         },
+        priceTranslate: function(price) {
+            if (price >= 10000) {
+                price = Math.round(price / 1000) / 10 + "萬";
+                return price;
+            } else {
+                return price;
+            }
+        },
+        addUtm: function(link) {
+            if (link.match(/\?/)) {
+                return link + location.search.replace(/([\?&])pid=[^&]*&?/, "$1").replace(/\?/,"&");
+            } else {
+                return link + location.search.replace(/([\?&])pid=[^&]*&?/, "$1");
+            }
+        },
         InfoProcess: function(data, titleWords, descriptionWords) {
             if (typeof titleWords == "undefined") {
                 var titleWords = {
@@ -162,23 +177,16 @@ TagtooAdWall = {
 
             for (var i = 0; i < data.length; i++) {
                 if (typeof data[i].description != "undefined" && typeof data[i].title != "undefined") {
-                    data[i].index = i;
+                    data[i].index = i;//
                     data[i].description = data[i].description.replace(/<li[^>]*>/g, '').replace(/<\/?(ul|li|hr|br)[^>]*>/g, "\n").replace(/<[^>]*>/g, "").replace(/\n(\s*\n)*/g, "\n").replace(/^\s+|\s+$/g, '');
                     data[i].title_short = TagtooAdWall.util.getInterceptedStr(data[i].title, titleWords.row, titleWords.rown);
                     data[i].description_short = TagtooAdWall.util.getInterceptedStr(data[i].description, descriptionWords.row, descriptionWords.rown);
                     data[i].price = TagtooAdWall.util.priceTranslate(data[i].price);
                     data[i].store_price = TagtooAdWall.util.priceTranslate(data[i].store_price);
+                    data[i].click_link = TagtooAdWall.util.addUtm(data[i].link);
                 }
             }
             return data
-        },
-        priceTranslate: function(price) {
-            if (price >= 10000) {
-                price = Math.round(price / 1000) / 10 + "萬";
-                return price;
-            } else {
-                return price;
-            }
         },
         productComplement: function(data, num) {
             if (data.length < num) {

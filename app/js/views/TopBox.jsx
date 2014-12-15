@@ -23,7 +23,7 @@ var TopBox = React.createClass({
             <Special truth={this.props.truth} />
             <Banner truth={this.props.truth} />
         </div>
-	);
+	  );
   }
 
 

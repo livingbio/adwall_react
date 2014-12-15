@@ -33,6 +33,7 @@ $(function(){
 	var t = setInterval(function () {
 		//確認api抓的資料有存到TagtooAdWall.adData.itemList之中
 		var complete = TagtooAdWall.adData.itemList.row_1 && TagtooAdWall.adData.itemList.row_2 && TagtooAdWall.adData.itemList.row_3;
+		
 		if(complete){
 
 			// 幫我建立mainapp元件，放到container中

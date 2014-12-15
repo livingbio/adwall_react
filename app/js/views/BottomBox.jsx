@@ -12,29 +12,27 @@ var ItemList = React.createFactory( require('./ItemList.jsx') );
  */
 var BottomBox = React.createClass({
 
-
-  /**
-   *
-   */
   render: function() {
+
+    var response = this.props.truth.response;
 
     return (
         <div className="bottom-box">    
             <div id="row_1" className="even">
-                <More link={this.props.truth.response.itemList.row_1.ad[0].extra.link1}/>
-                <Prev onClick={this.handleLeftArrowClick.bind(this, "row_1", this.props.truth.response.itemList.row_1.ad)}/>
-                <ItemList truth={this.props.truth.response.itemList.row_1} />
-                <Next onClick={this.handleRightArrowClick.bind(this, "row_1", this.props.truth.response.itemList.row_1.ad)}/>
+                <More link={response.itemList.row_1.ad[0].extra.link1}/>
+                <Prev onClick={this.handleLeftArrowClick.bind(this, "row_1", response.itemList.row_1.ad)}/>
+                <ItemList truth={response.itemList.row_1} />
+                <Next onClick={this.handleRightArrowClick.bind(this, "row_1", response.itemList.row_1.ad)}/>
             </div>
             <div id="row_2" className="even">
-                <More link={this.props.truth.response.itemList.row_2.ad[0].extra.link1}/>
-                <Prev onClick={this.handleLeftArrowClick.bind(this, "row_2", this.props.truth.response.itemList.row_2.ad)}/>
-                <ItemList truth={this.props.truth.response.itemList.row_2} />
-                <Next onClick={this.handleRightArrowClick.bind(this, "row_2", this.props.truth.response.itemList.row_2.ad)}/>
+                <More link={response.itemList.row_2.ad[0].extra.link1}/>
+                <Prev onClick={this.handleLeftArrowClick.bind(this, "row_2", response.itemList.row_2.ad)}/>
+                <ItemList truth={response.itemList.row_2} />
+                <Next onClick={this.handleRightArrowClick.bind(this, "row_2", response.itemList.row_2.ad)}/>
             </div>
             <div id="row_3" className="even">
-                <More link={this.props.truth.response.itemList.row_3.ad[0].extra.link1}/>
-                <ItemList truth={this.props.truth.response.itemList.row_3} />
+                <More link={response.itemList.row_3.ad[0].extra.link1}/>
+                <ItemList truth={response.itemList.row_3} />
             </div>
         </div>
   	);

@@ -13,6 +13,7 @@ var Special = React.createClass({
    *
    */
   render: function() {
+    
     var first = this.props.truth.response.first;
   	return (
         <div className="special">
@@ -47,7 +48,11 @@ var Special = React.createClass({
         </div>
     );
   },
-
+  openLink: function(){
+    //連結都會是link這個屬性嗎？special也有一個
+    var click_link = first.click_link;
+    window.open(click_link, '_blank');
+  }
 
 });
 
