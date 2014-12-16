@@ -14,7 +14,7 @@ var ItemList = React.createClass({
 
         var Ads = this.props.row.ad;
         var arr = Ads.map(function(item, index){
-            return <Item key={item.index} detail={item} click={this.click.bind(this, item)}/>
+            return <Item key={item.index} detail={item} click={this._onClick.bind(this, item)}/>
         }, this)
 
         return (
@@ -25,7 +25,7 @@ var ItemList = React.createClass({
             </div>
         )
     },
-    click: function(item){
+    _onClick: function(item){
 
         //open link
         window.open(item.click_link, '_blank');

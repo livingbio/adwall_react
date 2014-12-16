@@ -20,15 +20,15 @@ var BottomBox = React.createClass({
             <div className="bottom-box">    
                 <div id="row_1" className="even">
                     <More link={response.itemList.row_1.ad[0].extra.link1}/>
-                    <Prev onClick={this.handleLeftArrowClick.bind(this, "row_1", response.itemList.row_1.ad)}/>
+                    <Prev onClick={this._handleLeftArrowClick.bind(this, "row_1", response.itemList.row_1.ad)}/>
                     <ItemList row={response.itemList.row_1} />
-                    <Next onClick={this.handleRightArrowClick.bind(this, "row_1", response.itemList.row_1.ad)}/>
+                    <Next onClick={this._handleRightArrowClick.bind(this, "row_1", response.itemList.row_1.ad)}/>
                 </div>
                 <div id="row_2" className="even">
                     <More link={response.itemList.row_2.ad[0].extra.link1}/>
-                    <Prev onClick={this.handleLeftArrowClick.bind(this, "row_2", response.itemList.row_2.ad)}/>
+                    <Prev onClick={this._handleLeftArrowClick.bind(this, "row_2", response.itemList.row_2.ad)}/>
                     <ItemList row={response.itemList.row_2} />
-                    <Next onClick={this.handleRightArrowClick.bind(this, "row_2", response.itemList.row_2.ad)}/>
+                    <Next onClick={this._handleRightArrowClick.bind(this, "row_2", response.itemList.row_2.ad)}/>
                 </div>
                 <div id="row_3" className="even">
                     <More link={response.itemList.row_3.ad[0].extra.link1}/>
@@ -37,10 +37,10 @@ var BottomBox = React.createClass({
             </div>
         	);
     },
-    handleLeftArrowClick: function(key, itemList) {//其實不用傳itemList,因為有key了
+    _handleLeftArrowClick: function(key, itemList) {//其實不用傳itemList,因為有key了
         actions.ShiftLeft(key, itemList);
     },
-    handleRightArrowClick: function(key, itemList) {//其實不用傳itemList,因為有key了
+    _handleRightArrowClick: function(key, itemList) {//其實不用傳itemList,因為有key了
         actions.ShiftRight(key, itemList);
     }
 
