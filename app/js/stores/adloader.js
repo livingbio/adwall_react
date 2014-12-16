@@ -1,6 +1,14 @@
-//要改remarketing, similar的setting(name&type),把大小寫統一比較好
+/* 要修改
+** remarketing, similar的setting(name&type),把大小寫統一比較好
+** init:TagtooAdWall.urlOptions=...
+** 改api,改完之後要改setItemList
+** 進入牆之後要先發一個track
+** row3統一跟first拿資料？
+** TagtooAdWall.adData.p 有用到？
+** background 補 height 100%
+*/
 
-//讓TagtooAdWall放到window才能讓tag manager用到這個變數
+//看看window中有沒有TagtooAdWall這個global變數, 如果沒有的話就先建立一個local變數, 再讓他變成global(見倒數第二行)
 var TagtooAdWall = window.TagtooAdWall || {};
 TagtooAdWall = {
     "adData": {
@@ -29,6 +37,9 @@ TagtooAdWall = {
 		//recommend: function(productKeys, cb) {
 		//    TagtooAdWall.query.base(TagtooAdWall.URLBase + "query_iframe?q=&recommend=" + productKeys, cb);
 		//},
+        config: function() {
+
+        },
         key: function(productKeys, cb) {
             TagtooAdWall.query.base(TagtooAdWall.URLBase + "product.key?uri=" + productKeys, cb);
         },
@@ -36,6 +47,13 @@ TagtooAdWall = {
 			//要改掉
 			TagtooAdWall.query.base("//ad.tagtoo.co/ad/query/" + "product.simlar?product_key=" + productKeys, cb)
 		},
+		keyword: function(keyword,cb) {
+			TagtooAdWall.query.base(TagtooAdWall.URLBase + "product.keyword?keyword=" + keyword + "&advertisers=" + advertiser_id + "&require=" + keyword, cb)
+		},
+		//下面是舊的
+        items: function(productKeys, cb) {
+            TagtooAdWall.query.base(TagtooAdWall.URLBase + "get_product_items?items=" + productKeys, cb);
+        },
         rootPage: function(productKeys, cb) {
 	        TagtooAdWall.query.base(TagtooAdWall.URLBase + "query_iframe?q=&root=" + productKeys, cb);
         },
@@ -47,6 +65,7 @@ TagtooAdWall = {
         }
     },
     init: function() {
+        //要改回去
         TagtooAdWall.urlOptions = TagtooAdWall.util.decodeQueryData("http://www.cthouse.com.tw/event/103/tatoo/?pid=geosun-cthouse%3Aproduct%3A891598&utm_content=geosun-cthouse%3Aproduct%3A891598%7C0.067525932456"); //要換回document.location.href
         TagtooAdWall.publisher = parseInt(TagtooAdWall.urlOptions.pb || TagtooAdWall.urlOptions.media_id || TagtooAdWall.urlOptions.tagtoo_media_id);
         TagtooAdWall.slot = parseInt(TagtooAdWall.urlOptions.id);
@@ -345,12 +364,13 @@ TagtooAdWall.rowRule = {
     "row_3": {
         name: "row_3",
         type: "key",
-        //以後要從first商品的auto
+        //以後要從first商品的auto？
         value: "&root=geosun-cthouse:product:891598&debug=true",
         min_num: 12
     }
 
 }
 
+//讓TagtooAdWall放到window才能讓在global用到這個變數
 window.TagtooAdWall = TagtooAdWall;
 module.exports = TagtooAdWall;

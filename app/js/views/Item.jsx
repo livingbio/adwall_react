@@ -15,11 +15,11 @@ var Item = React.createClass({
 
         return (
                       
-          <div className="item"
-               onClick={this.props.click}>
+          <div className="item">
 
               <div className="item-slogan"></div>
-              <div className="item-img">
+              <div className="item-img"
+                   onClick={this.props.click}>
                   <img src={detail.image_url} />
               </div>
               

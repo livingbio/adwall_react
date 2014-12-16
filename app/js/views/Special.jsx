@@ -17,7 +17,7 @@ var Special = React.createClass({
     var first = this.props.truth.response.first;
   	return (
         <div className="special">
-            <div className="special-img">
+            <div className="special-img" onClick={this._onClick}>
               <img src={first.image_url}/>
             </div>
             <div className="special-text">
@@ -48,9 +48,9 @@ var Special = React.createClass({
         </div>
     );
   },
-  openLink: function(){
+  _onClick: function(){
     //連結都會是link這個屬性嗎？special也有一個
-    var click_link = first.click_link;
+    var click_link = this.props.truth.response.first.link;
     window.open(click_link, '_blank');
   }
 
