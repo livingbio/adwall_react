@@ -1,4 +1,4 @@
-//要改remarketing, similar的setting(name&type)
+//要改remarketing, similar的setting(name&type),把大小寫統一比較好
 
 //讓TagtooAdWall放到window才能讓tag manager用到這個變數
 var TagtooAdWall = window.TagtooAdWall || {};
