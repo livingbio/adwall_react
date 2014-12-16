@@ -36,24 +36,6 @@ TagtooAdWall = {
 			//要改掉
 			TagtooAdWall.query.base("//ad.tagtoo.co/ad/query/" + "product.simlar?product_key=" + productKeys, cb)
 		},
-		//rootPage: function(rootPage,cb) {
-		//	TagtooAdWall.query.base(TagtooAdWall.URLBase + 'product.key?uri=' + rootPage, cb)
-		//},
-		keyword: function(keyword,cb) {
-			TagtooAdWall.query.base(TagtooAdWall.URLBase + "product.keyword?keyword=" + keyword + "&advertisers=" + advertiser_id + "&require=" + keyword, cb)
-		},
-
-		//下面是舊的
-        items: function(productKeys, cb) {
-            TagtooAdWall.query.base(TagtooAdWall.URLBase + "get_product_items?items=" + productKeys, cb);
-        },
-        recommend: function(productKeys, cb) {
-            TagtooAdWall.query.base(TagtooAdWall.URLBase + "query_iframe?q=&recommend=" + productKeys, cb);
-        },
-        // similar: function(productKeys, advertiser_id, arg3, cb) {
-        //     TagtooAdWall.query.base(TagtooAdWall.URLBase + "query_iframe?q=&simlar=" + productKeys + "&advertiser_id=" + advertiser_id + arg3 || "", cb);
-        // },
-        //命名疑惑:root=rootpage?
         rootPage: function(productKeys, cb) {
 	        TagtooAdWall.query.base(TagtooAdWall.URLBase + "query_iframe?q=&root=" + productKeys, cb);
         },
@@ -217,7 +199,10 @@ TagtooAdWall = {
     	$.map(data, function(obj, key) {
     		if (obj.type.toLowerCase() == "key") {
     			TagtooAdWall.query[obj.type](obj.value, function(res) {
-    				//之後api統一之後要砍掉
+
+    				/*要補
+                    *之後api統一之後要砍掉
+                    */
     				if(res.length == 2) {
     					res = res[1];
     				}
@@ -232,6 +217,7 @@ TagtooAdWall = {
                     TagtooAdWall.adData.itemList[key].key = key;
     			})
     		} else if (obj.type == "remarketing") {
+                //發個AdTrack
                 TagtooAdWall.query[obj.name](obj.type, function(res) {
                     TagtooAdWall.a = res.a;
                     TagtooAdWall.b = res.b;
